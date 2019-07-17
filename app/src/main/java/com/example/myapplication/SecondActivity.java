@@ -44,10 +44,10 @@ public class SecondActivity extends AppCompatActivity {
 
 
                 if (usernameEditText.getText().toString().equals("admin") &&
-                        passwordEditText.getText().toString().equals("password")
+                        passwordEditText.getText().toString().equals("123")
                 ) {
                     Toast.makeText(getApplicationContext(), "You successfully logged in.", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(".Profile");
+                    Intent intent = new Intent(SecondActivity.this, ProfileActivity.class);
                     startActivity(intent);
                 } else
                     Toast.makeText(getApplicationContext(), "Invalid credentials", Toast.LENGTH_LONG).show();

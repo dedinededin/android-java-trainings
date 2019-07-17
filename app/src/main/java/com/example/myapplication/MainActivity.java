@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(".SecondActivity");
+                        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                         startActivity(intent);
                     }
                 }
