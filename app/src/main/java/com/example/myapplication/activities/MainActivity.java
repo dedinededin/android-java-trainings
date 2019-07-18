@@ -1,6 +1,5 @@
-package com.example.myapplication;
+package com.example.myapplication.activities;
 
-import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -13,8 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.myapplication.DatabaseHelper;
+import com.example.myapplication.R;
+
 public class MainActivity extends AppCompatActivity {
-    private static Button button_second;
+    private static Button button_second, button_database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         onClickButtonListener();
     }
+
 
     public void onButtonClick(View v) {
         EditText e1 = findViewById(R.id.editText);
@@ -43,10 +46,19 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this, FragmentActivity.class);
                         startActivity(intent);
-                        showNotification("test","asdgasdgasd");
+                        showNotification("test", "asdgasdgasd");
                     }
                 }
         );
+
+        button_database = findViewById(R.id.button_database);
+        button_database.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DatabaseActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     void showNotification(String title, String message) {
