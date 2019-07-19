@@ -80,4 +80,10 @@
         android:layout_height="wrap_content"
         android:text="Open Random Number Generator" />
 
+    <Button
+        android:id="@+id/file_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="File Read Write" />
+
 </LinearLayout>

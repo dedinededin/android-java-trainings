@@ -16,7 +16,7 @@ import com.example.myapplication.DatabaseHelper;
 import com.example.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
-    private static Button button_second, button_database, button_random;
+    private static Button button_second, button_database, button_random, button_file;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +68,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        button_file = findViewById(R.id.file_button);
+        button_file.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, FileReadWriteActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     void showNotification(String title, String message) {
