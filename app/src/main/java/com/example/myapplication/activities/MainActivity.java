@@ -16,7 +16,7 @@ import com.example.myapplication.DatabaseHelper;
 import com.example.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
-    private static Button button_second, button_database;
+    private static Button button_second, button_database, button_random;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, DatabaseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        button_random = findViewById(R.id.random_button);
+        button_random.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, RandomNumberActivity.class);
                 startActivity(intent);
             }
         });
